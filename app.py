@@ -1,5 +1,5 @@
 from classes import AddressBook, Birthday, filename
-from error_decorator import handle_hello, handler_add, handler_change, handler_phone, handle_show_all
+from error_decorator import handle_hello, handler_add, handler_change, handler_phone, delete_contact
 
 def main():
     address_book = AddressBook()
@@ -73,6 +73,12 @@ def main():
             elif len(address_book) == 0:
                 message = 'Empty list'
                 print(message)
+
+        elif comands == 'delete':
+            name = input('Please enter a name fro contact to delete:  ')
+            delete_contact(name, address_book)
+            save = address_book.save(filename)
+            
 
         elif comands == 'good bye' or 'close' or 'exit':
             print('Good bye =)')

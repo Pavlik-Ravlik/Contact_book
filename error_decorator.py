@@ -72,3 +72,8 @@ def handle_show_all(address_book):
 @input_error
 def show_day_to_birthday(day, month):
     return Birthday(day, month).days_to_birthday()
+
+@input_error
+def delete_contact(name, address_book):
+    if name in address_book.data:
+        del address_book.data[name]
