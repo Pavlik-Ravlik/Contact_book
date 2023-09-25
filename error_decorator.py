@@ -75,5 +75,7 @@ def show_day_to_birthday(day, month):
 
 @input_error
 def delete_contact(name, address_book):
-    if name in address_book.data:
-        del address_book.data[name]
+    if name.lower() in address_book.data:
+        del address_book.data[name.lower()]
+    else:
+        raise KeyError(f"{name} is not in contacts")

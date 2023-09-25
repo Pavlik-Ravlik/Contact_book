@@ -110,6 +110,7 @@ class Record:
         result = {'name': str(self.name), 'phones': [
             {'value': str(phone)} for phone in self.phones]}
         return result
+    
 
 
 class AddressBook(UserDict):
